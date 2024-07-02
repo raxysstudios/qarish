@@ -1,3 +1,3 @@
 # Qarish
 
-A little game about keeping your lifestock safe.
+A little game about keeping your livestock safe.
