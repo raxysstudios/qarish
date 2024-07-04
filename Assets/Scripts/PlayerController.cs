@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
         _moveInput = inputValue.Get<Vector2>();
     }
 
-    void OnSprint(InputValue inputValue){
+    void OnSprint(InputValue inputValue)
+    {
         print("player is run");
     }
 
