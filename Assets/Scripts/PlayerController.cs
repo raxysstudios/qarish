@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed;
-    public Transform direction;
     private Vector2 moveInput;
 
     private Rigidbody2D rb;
