@@ -3,19 +3,23 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Orientation2D))]
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed;
+    public Transform direction;
     private Vector2 moveInput;
 
     private Rigidbody2D rb;
     private Animator anim;
+    private Orientation2D orient;
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        orient = GetComponent<Orientation2D>();
     }
 
 
@@ -26,6 +30,20 @@ public class PlayerController : MonoBehaviour
             rb.position + move * Time.fixedDeltaTime
         );
         anim.SetFloat("Speed", move.magnitude);
+    }
+
+    void LateUpdate()
+    {
+        var screen = Mouse.current.position.ReadValue();
+        var world = Camera.main.ScreenToWorldPoint(
+            new Vector3(screen.x, screen.y, 10)
+        );
+        orient.TurnTo(world);
+        orient.LookAt(world);
+
+        // Vector2 viewport = Camera.main.ScreenToViewportPoint(screen);
+        // var offset = (viewport - .5f * Vector2.one) * aimDistance;
+        // aimComposer.TargetOffset = offset;
     }
 
     void OnMove(InputValue inputValue)
