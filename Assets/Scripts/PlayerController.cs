@@ -50,4 +50,9 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = inputValue.Get<Vector2>();
     }
+
+    void OnAttack(InputValue inputValue)
+    {
+        anim.SetTrigger("Attack");
+    }
 }
