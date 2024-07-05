@@ -1,36 +1,35 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements.Experimental;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private float _speed;
-    [SerializeField]
-    private float _sprint;
-    private Vector2 _moveInput;
-    private Rigidbody2D rb;
+    public float walkSpeed;
+    private Vector2 moveInput;
 
-    private void Start()
+    private Rigidbody2D rb;
+    private Animator anim;
+
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + _moveInput * _speed * Time.fixedDeltaTime);
+        var move = walkSpeed * moveInput;
+        rb.MovePosition(
+            rb.position + move * Time.fixedDeltaTime
+        );
+        anim.SetFloat("Speed", move.magnitude);
     }
 
     void OnMove(InputValue inputValue)
     {
-        _moveInput = inputValue.Get<Vector2>();
+        moveInput = inputValue.Get<Vector2>();
     }
-
-    void OnSprint(InputValue inputValue)
-    {
-        print("player is run");
-    }
-
-
 }
