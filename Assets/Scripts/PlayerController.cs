@@ -54,4 +54,9 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetTrigger("Attack");
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, 3);
+    }
 }
