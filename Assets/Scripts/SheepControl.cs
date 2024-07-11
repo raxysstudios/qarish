@@ -21,6 +21,11 @@ public class SheepControl : MonoBehaviour
         {
             return;
         }
+        if((moveTarget.Value - rb.position).sqrMagnitude <= 1)
+        {
+            moveTarget = null;
+            return;
+        }
         var move = walkSpeed *(moveTarget.Value - rb.position).normalized;
         rb.MovePosition(
             rb.position + move * Time.fixedDeltaTime
@@ -39,4 +44,5 @@ public class SheepControl : MonoBehaviour
             moveTarget = null;
         }
     }
+    
 }
