@@ -13,14 +13,12 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Orientation2D orient;
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         orient = GetComponent<Orientation2D>();
     }
-
 
     void FixedUpdate()
     {
