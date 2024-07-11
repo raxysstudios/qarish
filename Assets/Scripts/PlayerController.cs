@@ -8,7 +8,7 @@ using UnityEngine.InputSystem.Interactions;
 [RequireComponent(typeof(Orientation2D))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private GameObject obj;
+
     public float walkSpeed;
     private Vector2 moveInput;
 
@@ -16,9 +16,9 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Orientation2D orient;
     
-    public float radius = 3f;
+    public float callRadius = 3f;
 
-    public Transform player;
+
     
     private void Awake()
     {
@@ -71,36 +71,21 @@ public class PlayerController : MonoBehaviour
     void OnCall(InputValue inputValue)
     {
         print("Is called");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, (player.position - transform.position).normalized, Mathf.Infinity, LayerMask.GetMask("Player"));
+        var hits = Physics2D.OverlapCircleAll(transform.position, callRadius, LayerMask.GetMask("Unit"));
 
-        if(hit.collider != null)
+        foreach (var hit in hits)
         {
-            print("Go to the player");
-            
-
-            // NPC видит игрока, поэтому он начинает идти к нему
-            // Реализуйте здесь логику передвижения NPC
+            if (hit.TryGetComponent<SheepControl>(out var sheep))
+            {
+                sheep.RecieveCall(transform.position);
+            }
         }
-
     }
 
     void OnMultiCall(InputValue inputValue)
     {
         print("MultiCall");
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, radius, Vector2.zero);
-        
-        foreach (RaycastHit2D hit in hits)
-        {
-            if (obj)
-            {
-                LayerMask.GetMask("Sheep");
-                print("go away");
-            }
-            else
-            {
-                print("stay");
-            }
-        }
+
     }
 
     

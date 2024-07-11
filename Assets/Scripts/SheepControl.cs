@@ -7,7 +7,7 @@ public class SheepControl : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float walkSpeed = 5f;
-    private Vector2 moveInput;
+    private Vector2? moveTarget;
     
     private void Awake()
     {
@@ -15,17 +15,28 @@ public class SheepControl : MonoBehaviour
 
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
-        var move = walkSpeed * moveInput;
+        if (!moveTarget.HasValue)
+        {
+            return;
+        }
+        var move = walkSpeed *(moveTarget.Value - rb.position).normalized;
         rb.MovePosition(
             rb.position + move * Time.fixedDeltaTime
         );
 
     }
     
-    void OnMove(InputValue inputValue)
+    public void RecieveCall(Vector2 point)
     {
-        moveInput = inputValue.Get<Vector2>();
+        if (moveTarget == null)
+        {
+            moveTarget = point;
+        }
+        else
+        {
+            moveTarget = null;
+        }
     }
 }
