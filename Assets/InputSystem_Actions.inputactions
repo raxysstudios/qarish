@@ -89,7 +89,7 @@
                 {
                     "name": "MultiCall",
                     "type": "Button",
-                    "id": "af4a6329-7b36-41e5-965f-9a4a36bb7e32",
+                    "id": "41fc0e52-083b-4d42-86c9-2684061400dc",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -451,7 +451,7 @@
                 },
                 {
                     "name": "",
-                    "id": "7536101b-cddd-4dd4-b927-ab262e23141d",
+                    "id": "b84ad12a-19d4-4e5b-ad8f-015161a634ce",
                     "path": "<Keyboard>/space",
                     "interactions": "MultiTap",
                     "processors": "",

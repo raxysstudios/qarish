@@ -33,7 +33,7 @@ public class SheepControl : MonoBehaviour
 
     }
     
-    public void RecieveCall(Vector2 point)
+    public void RecieveCall(Vector2 point, bool isDiraction)
     {
         if (moveTarget == null)
         {

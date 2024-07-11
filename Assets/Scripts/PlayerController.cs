@@ -71,13 +71,14 @@ public class PlayerController : MonoBehaviour
     void OnCall(InputValue inputValue)
     {
         print("Is called");
-        var hits = Physics2D.OverlapCircleAll(transform.position, callRadius, LayerMask.GetMask("Unit"));
+        var hits = Physics2D.OverlapCircleAll(transform.position,
+            callRadius, LayerMask.GetMask("Unit"));
 
         foreach (var hit in hits)
         {
             if (hit.TryGetComponent<SheepControl>(out var sheep))
             {
-                sheep.RecieveCall(transform.position);
+                sheep.RecieveCall(transform.position, false);
             }
         }
     }
@@ -85,11 +86,16 @@ public class PlayerController : MonoBehaviour
     void OnMultiCall(InputValue inputValue)
     {
         print("MultiCall");
+        var hits = Physics2D.OverlapCircleAll(transform.position,
+            callRadius, LayerMask.GetMask("Unit"));
 
+        foreach (var hit in hits)
+        {
+            if (hit.TryGetComponent<SheepControl>(out var sheep))
+            {
+                sheep.RecieveCall(transform.position, false);
+            }
+        }
     }
-
     
-
-
-
 }
