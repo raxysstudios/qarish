@@ -85,6 +85,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MultiCall",
+                    "type": "Button",
+                    "id": "af4a6329-7b36-41e5-965f-9a4a36bb7e32",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -442,12 +451,12 @@
                 },
                 {
                     "name": "",
-                    "id": "c59f893d-076e-4914-a6a1-fd2e1bfad67f",
+                    "id": "7536101b-cddd-4dd4-b927-ab262e23141d",
                     "path": "<Keyboard>/space",
                     "interactions": "MultiTap",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Call",
+                    "action": "MultiCall",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
