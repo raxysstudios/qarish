@@ -8,6 +8,7 @@ public class SheepControl : MonoBehaviour
     private Rigidbody2D rb;
     public float walkSpeed = 5f;
     private Vector2? moveTarget;
+    private bool isDirection = false;
     
     private void Awake()
     {
@@ -21,23 +22,33 @@ public class SheepControl : MonoBehaviour
         {
             return;
         }
-        if((moveTarget.Value - rb.position).sqrMagnitude <= 1)
+        if(!isDirection && (moveTarget.Value - rb.position).sqrMagnitude <= 1)
         {
             moveTarget = null;
             return;
         }
-        var move = walkSpeed *(moveTarget.Value - rb.position).normalized;
+        var direction = isDirection ? moveTarget.Value: (moveTarget.Value - rb.position).normalized;
+        var move = walkSpeed * direction;
         rb.MovePosition(
             rb.position + move * Time.fixedDeltaTime
         );
 
     }
     
-    public void RecieveCall(Vector2 point, bool isDiraction)
+    public void ReceiveCall(Vector2 point, bool isDirection = false)
     {
+        this.isDirection = isDirection;
         if (moveTarget == null)
         {
-            moveTarget = point;
+            if (isDirection)
+            {
+                moveTarget = (point - rb.position).normalized;
+            }
+            else
+            {
+                moveTarget = point;
+            }
+            
         }
         else
         {

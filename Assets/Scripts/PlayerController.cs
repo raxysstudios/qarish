@@ -71,14 +71,17 @@ public class PlayerController : MonoBehaviour
     void OnCall(InputValue inputValue)
     {
         print("Is called");
+        
         var hits = Physics2D.OverlapCircleAll(transform.position,
             callRadius, LayerMask.GetMask("Unit"));
-
+    
         foreach (var hit in hits)
         {
             if (hit.TryGetComponent<SheepControl>(out var sheep))
             {
-                sheep.RecieveCall(transform.position, false);
+                
+                sheep.ReceiveCall(transform.position, false);
+                
             }
         }
     }
@@ -93,7 +96,8 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.TryGetComponent<SheepControl>(out var sheep))
             {
-                sheep.RecieveCall(transform.position, false);
+                sheep.ReceiveCall(transform.position, true);
+                
             }
         }
     }
