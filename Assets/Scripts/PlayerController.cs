@@ -1,19 +1,25 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Orientation2D))]
 public class PlayerController : MonoBehaviour
 {
+
     public float walkSpeed;
     private Vector2 moveInput;
 
     private Rigidbody2D rb;
     private Animator anim;
     private Orientation2D orient;
+    
+    public float callRadius = 3f;
 
 
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,6 +35,8 @@ public class PlayerController : MonoBehaviour
             rb.position + move * Time.fixedDeltaTime
         );
         anim.SetFloat("Speed", move.magnitude);
+        
+
     }
 
     void LateUpdate()
@@ -54,4 +62,44 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetTrigger("Attack");
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, callRadius);
+    }
+
+    void OnCall(InputValue inputValue)
+    {
+        print("Is called");
+        
+        var hits = Physics2D.OverlapCircleAll(transform.position,
+            callRadius, LayerMask.GetMask("Unit"));
+    
+        foreach (var hit in hits)
+        {
+            if (hit.TryGetComponent<SheepControl>(out var sheep))
+            {
+                
+                sheep.ReceiveCall(transform.position, false);
+                
+            }
+        }
+    }
+
+    void OnMultiCall(InputValue inputValue)
+    {
+        print("MultiCall");
+        var hits = Physics2D.OverlapCircleAll(transform.position,
+            callRadius, LayerMask.GetMask("Unit"));
+
+        foreach (var hit in hits)
+        {
+            if (hit.TryGetComponent<SheepControl>(out var sheep))
+            {
+                sheep.ReceiveCall(transform.position, true);
+                
+            }
+        }
+    }
+    
 }
