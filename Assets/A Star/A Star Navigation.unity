@@ -356,12 +356,12 @@ MonoBehaviour:
       tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
       traversableTags: -1
     enableLocalAvoidance: 0
-    enableGravity: 1
+    enableGravity: 0
   autoRepathBacking:
     mode: 2
     period: 2
   orientationBacking: 1
-  movementPlaneSourceBacking: 0
+  movementPlaneSourceBacking: 1
 --- !u!1 &109334476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,7 +2331,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2356,7 +2356,7 @@ Transform:
   m_GameObject: {fileID: 946512130}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.85, y: 0.97, z: -8.86}
+  m_LocalPosition: {x: 0.93, y: -2.7, z: -8.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
