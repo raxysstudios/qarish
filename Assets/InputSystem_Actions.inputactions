@@ -441,7 +441,7 @@
                 {
                     "name": "",
                     "id": "39fa4a82-b47b-4348-9d2a-692e59b3a8a4",
-                    "path": "<Keyboard>/space",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -452,7 +452,7 @@
                 {
                     "name": "",
                     "id": "b84ad12a-19d4-4e5b-ad8f-015161a634ce",
-                    "path": "<Keyboard>/space",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "MultiTap",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
