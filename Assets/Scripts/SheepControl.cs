@@ -34,26 +34,20 @@ public class SheepControl : MonoBehaviour
         );
 
     }
-    
-    public void ReceiveCall(Vector2 point, bool isDirection = false)
+
+    public void Stop()
     {
-        this.isDirection = isDirection;
-        if (moveTarget == null)
-        {
-            if (isDirection)
-            {
-                moveTarget = (point - rb.position).normalized;
-            }
-            else
-            {
-                moveTarget = point;
-            }
-            
-        }
-        else
-        {
-            moveTarget = null;
-        }
+        print("Stop");
+    }
+
+    public void Move(Vector2 point)
+    {
+        print("Move " + point);
+    }
+
+    public void Follow(Transform target)
+    {
+        print("Follow " + target);
     }
     
 }

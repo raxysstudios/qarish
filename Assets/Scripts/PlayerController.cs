@@ -1,24 +1,26 @@
+using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
+using System.Collections.Generic;
+using System.Linq;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Orientation2D))]
 public class PlayerController : MonoBehaviour
 {
-
+    [Header("Move")]
     public float walkSpeed;
     private Vector2 moveInput;
+    private Vector2 worldMouse = Vector2.zero;
 
     private Rigidbody2D rb;
     private Animator anim;
     private Orientation2D orient;
     
-    public float callRadius = 3f;
-
-
+    public SheepControl[] sheep;
     
     private void Awake()
     {
@@ -27,6 +29,13 @@ public class PlayerController : MonoBehaviour
         orient = GetComponent<Orientation2D>();
     }
 
+    private void Update()
+    {
+        var screen = Mouse.current.position.ReadValue();
+        worldMouse = Camera.main.ScreenToWorldPoint(
+            new Vector3(screen.x, screen.y, 10)
+        );
+    }
 
     void FixedUpdate()
     {
@@ -35,18 +44,12 @@ public class PlayerController : MonoBehaviour
             rb.position + move * Time.fixedDeltaTime
         );
         anim.SetFloat("Speed", move.magnitude);
-        
-
     }
 
     void LateUpdate()
     {
-        var screen = Mouse.current.position.ReadValue();
-        var world = Camera.main.ScreenToWorldPoint(
-            new Vector3(screen.x, screen.y, 10)
-        );
-        orient.TurnTo(world);
-        orient.LookAt(world);
+        orient.TurnTo(worldMouse);
+        orient.LookAt(worldMouse);
 
         // Vector2 viewport = Camera.main.ScreenToViewportPoint(screen);
         // var offset = (viewport - .5f * Vector2.one) * aimDistance;
@@ -62,46 +65,33 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetTrigger("Attack");
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, callRadius);
-    }
 
     void OnCall(InputValue inputValue)
     {
-        print("Is called");
+        var hits = Physics2D.OverlapCircleAll(worldMouse, 1,
+            LayerMask.GetMask("Unit"));
+        if (hits.Length == 0)
+        {
+            foreach (var s in sheep)
+            {
+                s.Move(worldMouse);
+            }
+        }
+        else if(hits.Any((c) => c.CompareTag("Player")))
+        {
+            foreach (var s in sheep)
+            {
+                s.Follow(transform);
+            }
+        }
+        else if (hits.Any((c)=> c.CompareTag("Sheep")))
+        {
+            foreach (var s in sheep)
+            {
+                s.Stop();
+            }
+        }
+
         
-        var hits = Physics2D.OverlapCircleAll(transform.position,
-            callRadius, LayerMask.GetMask("Unit"));
-    
-        foreach (var hit in hits)
-        {
-            if (hit.TryGetComponent<SheepControl>(out var sheep))
-            {
-                
-                sheep.ReceiveCall(transform.position, false);
-                
-            }
-        }
     }
-
-    void OnMultiCall(InputValue inputValue)
-    {
-        print("MultiCall");
-        var hits = Physics2D.OverlapCircleAll(transform.position,
-            callRadius, LayerMask.GetMask("Unit"));
-
-        foreach (var hit in hits)
-        {
-            if (hit.TryGetComponent<SheepControl>(out var sheep))
-            {
-                sheep.ReceiveCall(transform.position, true);
-                
-            }
-        }
-    }
-    
-    
-    
 }

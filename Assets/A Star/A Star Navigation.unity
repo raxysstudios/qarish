@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 102590036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.26, y: -0.81, z: 0}
+  m_LocalPosition: {x: -1.26, y: -6.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -801,13 +801,21 @@ PrefabInstance:
       propertyPath: callRadius
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -8690805574019348734, guid: 1cb9f74d00eed4c81bfe8a6822ff3edd, type: 3}
+      propertyPath: sheep.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8690805574019348734, guid: 1cb9f74d00eed4c81bfe8a6822ff3edd, type: 3}
+      propertyPath: 'sheep.Array.data[0]'
+      value: 
+      objectReference: {fileID: 102590037}
     - target: {fileID: 2287180371472623098, guid: 1cb9f74d00eed4c81bfe8a6822ff3edd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.87
+      value: 4.02
       objectReference: {fileID: 0}
     - target: {fileID: 2287180371472623098, guid: 1cb9f74d00eed4c81bfe8a6822ff3edd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.12
+      value: -7.74
       objectReference: {fileID: 0}
     - target: {fileID: 2287180371472623098, guid: 1cb9f74d00eed4c81bfe8a6822ff3edd, type: 3}
       propertyPath: m_LocalPosition.z
