@@ -45,5 +45,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Home
+    uniqueID: 4206243221
+    locked: 0
+  - name: Window
+    uniqueID: 2993755631
+    locked: 0
+  - name: Door
+    uniqueID: 3212667093
+    locked: 0
   m_RenderingLayers:
   - Default
