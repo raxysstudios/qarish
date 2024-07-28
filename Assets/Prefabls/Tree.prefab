@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2808908603558514459}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leafs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2370064337932588799}
   - component: {fileID: 2303863448515706633}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283509886929125483}
   - component: {fileID: 3768429228694018174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5447373715524631978}
   - component: {fileID: 1226734701008073235}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6277916792257194322}
   - component: {fileID: 5128841101407236852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3353251397197165207}
   - component: {fileID: 301384108969946993}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5276507357043748173}
   - component: {fileID: 7451534017640308174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,8 @@ GameObject:
   - component: {fileID: 2708217610785391844}
   - component: {fileID: 135549236015021301}
   - component: {fileID: 4990463691590485259}
-  m_Layer: 0
+  - component: {fileID: 5720898590536421886}
+  m_Layer: 8
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,6 +647,35 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.1}
   m_Radius: 0.125
+--- !u!114 &5720898590536421886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6216605556176878421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bee0a6fa1f5d4f4db481219040523c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1073741824
+  graphMask:
+    value: -1
+  type: 5
+  mesh: {fileID: 0}
+  rectangleSize: {x: 1, y: 1}
+  circleRadius: 0.2
+  circleResolution: 6
+  height: 0.1
+  meshScale: 1
+  center: {x: 0, y: 0.1, z: 0}
+  updateDistance: 0.4
+  isDual: 0
+  radiusExpansionMode: 1
+  cutsAddedGeom: 1
+  updateRotationDistance: 10
+  useRotationAndScale: 0
 --- !u!1 &6300698201593530511
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3713884147101628644}
   - component: {fileID: 4597052894791601286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,7 +773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8238945771291756736}
   - component: {fileID: 9031999215083647620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -830,7 +860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 126803357539724245}
   - component: {fileID: 730281014967184149}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,7 +947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6790454745953697036}
   - component: {fileID: 8675508108956552435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,7 +1034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4836223556389463990}
   - component: {fileID: 5063546729549442958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
