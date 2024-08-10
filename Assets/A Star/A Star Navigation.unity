@@ -233,7 +233,6 @@ GameObject:
   - component: {fileID: 102590038}
   - component: {fileID: 102590037}
   - component: {fileID: 102590043}
-  - component: {fileID: 102590042}
   - component: {fileID: 102590044}
   - component: {fileID: 102590045}
   - component: {fileID: 102590046}
@@ -256,8 +255,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f5e3496b2db4d288983a556ea0c423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 300
+  arrivalDistance: 1
+  target: {x: 0, y: 0}
   rb: {fileID: 0}
-  ai: {fileID: 0}
 --- !u!50 &102590038
 Rigidbody2D:
   serializedVersion: 5
@@ -266,12 +267,12 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102590036}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 2
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -281,7 +282,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -337,55 +338,6 @@ Transform:
   - {fileID: 803290752}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &102590042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102590036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1073741824
-  radius: 0.3
-  height: 0.01
-  canMove: 1
-  maxSpeed: 5
-  gravity: {x: 0, y: 0, z: 0}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  endReachedDistance: 0.3
-  whenCloseToDestination: 0
-  rvoDensityBehavior:
-    enabled: 1
-    densityThreshold: 0.5
-    returnAfterBeingPushedAway: 1
-    progressAverage: 0
-    lastJobDensityResult: 0
-  centerOffsetCompatibility: NaN
-  repathRateCompatibility: NaN
-  canSearchCompability: 0
-  orientation: 1
-  enableRotation: 0
-  autoRepath:
-    mode: 2
-    period: 0.5
-    sensitivity: 10
-    maximumPeriod: 2
-    visualizeSensitivity: 0
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: 100
-  rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 2
-  alwaysDrawGizmos: 0
-  slowWhenNotFacingTarget: 1
-  preventMovingBackwards: 0
-  constrainInsideGraph: 1
 --- !u!114 &102590043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1073741824
-  smoothType: 2
+  smoothType: 1
   subdivisions: 2
   iterations: 2
   strength: 0.5
@@ -1872,7 +1824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &383803020
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1977,7 +1929,7 @@ MonoBehaviour:
   - {fileID: 1501361068}
   - {fileID: 1786191325}
   beacon: {fileID: 133470904}
-  followDelay: 0.5
+  followDelay: 0.25
 --- !u!4 &400882543
 Transform:
   m_ObjectHideFlags: 0
@@ -5566,7 +5518,6 @@ GameObject:
   - component: {fileID: 1501361069}
   - component: {fileID: 1501361068}
   - component: {fileID: 1501361073}
-  - component: {fileID: 1501361072}
   - component: {fileID: 1501361074}
   - component: {fileID: 1501361076}
   - component: {fileID: 1501361077}
@@ -5589,8 +5540,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f5e3496b2db4d288983a556ea0c423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 300
+  arrivalDistance: 1
+  target: {x: 0, y: 0}
   rb: {fileID: 0}
-  ai: {fileID: 0}
 --- !u!50 &1501361069
 Rigidbody2D:
   serializedVersion: 5
@@ -5599,12 +5552,12 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501361066}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 2
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -5614,7 +5567,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -5670,55 +5623,6 @@ Transform:
   - {fileID: 84440224}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1501361072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501361066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1073741824
-  radius: 0.3
-  height: 0.01
-  canMove: 1
-  maxSpeed: 5
-  gravity: {x: 0, y: 0, z: 0}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  endReachedDistance: 0.3
-  whenCloseToDestination: 0
-  rvoDensityBehavior:
-    enabled: 1
-    densityThreshold: 0.5
-    returnAfterBeingPushedAway: 1
-    progressAverage: 0
-    lastJobDensityResult: 0
-  centerOffsetCompatibility: NaN
-  repathRateCompatibility: NaN
-  canSearchCompability: 0
-  orientation: 1
-  enableRotation: 0
-  autoRepath:
-    mode: 2
-    period: 0.5
-    sensitivity: 10
-    maximumPeriod: 2
-    visualizeSensitivity: 0
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: 100
-  rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 2
-  alwaysDrawGizmos: 0
-  slowWhenNotFacingTarget: 1
-  preventMovingBackwards: 0
-  constrainInsideGraph: 1
 --- !u!114 &1501361073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5800,7 +5704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1073741824
-  smoothType: 2
+  smoothType: 1
   subdivisions: 2
   iterations: 2
   strength: 0.5
@@ -6682,7 +6586,6 @@ GameObject:
   - component: {fileID: 1786191326}
   - component: {fileID: 1786191325}
   - component: {fileID: 1786191330}
-  - component: {fileID: 1786191329}
   - component: {fileID: 1786191331}
   - component: {fileID: 1786191333}
   - component: {fileID: 1786191334}
@@ -6705,8 +6608,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f5e3496b2db4d288983a556ea0c423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 300
+  arrivalDistance: 1
+  target: {x: 0, y: 0}
   rb: {fileID: 0}
-  ai: {fileID: 0}
 --- !u!50 &1786191326
 Rigidbody2D:
   serializedVersion: 5
@@ -6715,12 +6620,12 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786191323}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 2
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -6730,7 +6635,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -6786,55 +6691,6 @@ Transform:
   - {fileID: 188198611}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1786191329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786191323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1073741824
-  radius: 0.3
-  height: 0.01
-  canMove: 1
-  maxSpeed: 5
-  gravity: {x: 0, y: 0, z: 0}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  endReachedDistance: 0.3
-  whenCloseToDestination: 0
-  rvoDensityBehavior:
-    enabled: 1
-    densityThreshold: 0.5
-    returnAfterBeingPushedAway: 1
-    progressAverage: 0
-    lastJobDensityResult: 0
-  centerOffsetCompatibility: NaN
-  repathRateCompatibility: NaN
-  canSearchCompability: 0
-  orientation: 1
-  enableRotation: 0
-  autoRepath:
-    mode: 2
-    period: 0.5
-    sensitivity: 10
-    maximumPeriod: 2
-    visualizeSensitivity: 0
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: 100
-  rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 2
-  alwaysDrawGizmos: 0
-  slowWhenNotFacingTarget: 1
-  preventMovingBackwards: 0
-  constrainInsideGraph: 1
 --- !u!114 &1786191330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6916,7 +6772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1073741824
-  smoothType: 2
+  smoothType: 1
   subdivisions: 2
   iterations: 2
   strength: 0.5

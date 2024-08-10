@@ -30,7 +30,6 @@ public class FlockController : MonoBehaviour
     private float followDelay = .5f;
 
     IEnumerator targetCoroutine;
-    readonly List<Vector2> sheepPoints = new();
 
     public void Stop()
     {
@@ -52,19 +51,17 @@ public class FlockController : MonoBehaviour
 
     IEnumerator UpdateTargets()
     {
-        sheepPoints.Clear();
+        var engagedCount = 1;
+        sheep[0].target = Target.position;
         while (true)
         {
-            sheep[0].ai.destination = target.position;
-            for (var i = 1; i < sheepPoints.Count; i++)
-                sheep[i].ai.destination = sheepPoints[i - 1];
+            for (var i = 1; i < engagedCount; i++)
+                sheep[i].target = sheep[i - 1].rb.position;
 
-            if (sheepPoints.Count < sheep.Count)
-                sheepPoints.Add(Vector2.zero);
-            for (var i = 0; i < sheepPoints.Count; i++)
-                sheepPoints[i] = sheep[i].rb.position;
+            if (engagedCount < sheep.Count)
+                engagedCount++;
 
-            yield return new WaitForSeconds(followDelay);
+            yield return new WaitForFixedUpdate();
         }
     }
 
@@ -77,6 +74,6 @@ public class FlockController : MonoBehaviour
         }
         else
             foreach (var s in sheep)
-                s.ai.destination = s.rb.position;
+                s.target = s.rb.position;
     }
 }
