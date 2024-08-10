@@ -235,7 +235,6 @@ GameObject:
   - component: {fileID: 102590043}
   - component: {fileID: 102590044}
   - component: {fileID: 102590045}
-  - component: {fileID: 102590046}
   m_Layer: 6
   m_Name: Sheep
   m_TagString: Sheep
@@ -272,7 +271,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 2
+  m_LinearDamping: 3
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -406,22 +405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 102590041}
---- !u!114 &102590046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102590036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1073741824
-  quality: 0
-  splitAtEveryPortal: 0
-  accountForGridPenalties: 0
 --- !u!1 &109334476
 GameObject:
   m_ObjectHideFlags: 0
@@ -5514,7 +5497,6 @@ GameObject:
   - component: {fileID: 1501361073}
   - component: {fileID: 1501361074}
   - component: {fileID: 1501361076}
-  - component: {fileID: 1501361077}
   m_Layer: 6
   m_Name: Sheep (1)
   m_TagString: Sheep
@@ -5551,7 +5533,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 2
+  m_LinearDamping: 3
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -5685,22 +5667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 1501361071}
---- !u!114 &1501361077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501361066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1073741824
-  quality: 0
-  splitAtEveryPortal: 0
-  accountForGridPenalties: 0
 --- !u!1 &1582607313
 GameObject:
   m_ObjectHideFlags: 0
@@ -6576,7 +6542,6 @@ GameObject:
   - component: {fileID: 1786191330}
   - component: {fileID: 1786191331}
   - component: {fileID: 1786191333}
-  - component: {fileID: 1786191334}
   m_Layer: 6
   m_Name: Sheep (2)
   m_TagString: Sheep
@@ -6613,7 +6578,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 2
+  m_LinearDamping: 3
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -6747,22 +6712,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 1786191328}
---- !u!114 &1786191334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786191323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1073741824
-  quality: 0
-  splitAtEveryPortal: 0
-  accountForGridPenalties: 0
 --- !u!1001 &1795953385
 PrefabInstance:
   m_ObjectHideFlags: 0

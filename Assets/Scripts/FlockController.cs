@@ -52,9 +52,9 @@ public class FlockController : MonoBehaviour
     IEnumerator UpdateTargets()
     {
         var engagedCount = 1;
-        sheep[0].target = Target.position;
         while (true)
         {
+            sheep[0].target = Target.position;
             for (var i = 1; i < engagedCount; i++)
                 sheep[i].target = sheep[i - 1].rb.position;
 
