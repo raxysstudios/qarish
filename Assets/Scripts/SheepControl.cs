@@ -9,6 +9,7 @@ public class SheepControl : MonoBehaviour
     public float speed;
     int currentWaypoint = 0;
     public float arrivalDistance = 2;
+
     public Vector2 target;
     Path path;
 
@@ -22,7 +23,6 @@ public class SheepControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         seeker = GetComponent<Seeker>();
         orient = GetComponent<Orientation2D>();
-
         InvokeRepeating(nameof(UpdatePath), 0, .5f);
     }
 
@@ -42,14 +42,18 @@ public class SheepControl : MonoBehaviour
             return;
 
         var waypoint = (Vector2)path.vectorPath[currentWaypoint];
+        if ((rb.position - waypoint).sqrMagnitude
+            <= arrivalDistance * arrivalDistance)
+        {
+            currentWaypoint++;
+            return;
+        }
+
         var dir = (waypoint - rb.position).normalized;
         var force = speed * Time.fixedDeltaTime * dir;
         rb.AddForce(force);
 
         orient.Sign = force.x >= .1f ? 1 : -1;
 
-        if ((rb.position - waypoint).sqrMagnitude
-            <= arrivalDistance * arrivalDistance)
-            currentWaypoint++;
     }
 }

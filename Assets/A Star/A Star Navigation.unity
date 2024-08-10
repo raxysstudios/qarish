@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
-  arrivalDistance: 1
+  arrivalDistance: 0.5
   target: {x: 0, y: 0}
   rb: {fileID: 0}
 --- !u!50 &102590038
@@ -415,19 +415,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 102590036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
+  m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1073741824
-  smoothType: 1
-  subdivisions: 2
-  iterations: 2
-  strength: 0.5
-  uniformLength: 1
-  maxSegmentLength: 2
-  bezierTangentLength: 0.4
-  offset: 0.2
-  factor: 0.1
+  quality: 0
+  splitAtEveryPortal: 0
+  accountForGridPenalties: 0
 --- !u!1 &109334476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,8 +2239,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 489762519}
-  - component: {fileID: 489762521}
   - component: {fileID: 489762522}
+  - component: {fileID: 489762523}
   m_Layer: 0
   m_Name: Nav
   m_TagString: Untagged
@@ -2288,7 +2282,28 @@ Transform:
   - {fileID: 1228577052}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &489762521
+--- !u!114 &489762522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489762516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1764de1de43cc4d19af52679d3eaae06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1073741824
+  desiredSimulationFPS: 20
+  workerThreads: 2
+  doubleBuffering: 0
+  hardCollisions: 1
+  symmetryBreakingBias: 0.1
+  movementPlane: 1
+  useNavmeshAsObstacle: 1
+  drawQuadtree: 0
+--- !u!114 &489762523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2302,7 +2317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1073741824
   data:
-    dataString: UEsDBBQAAAgIAAAYIezjMw6OhgIAAO8EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVMFymzAQ/RUP59qDIRDIsXaadiZOOrY7zSTTwxqtQRMhuZKwk3j879UKcEhbX2Te7j7t231wDIoKNBQW9RIYb0xwNQon0adRUChpVaMX8HKttdIO9ygKseJv6NOmDjiAeIaNwK/Iy8p2WT04E7ze+NTEoTW8rITaUW0cts/XrMRblKWtqNKDXC6x5Ep2t8QOQ8at0msusAfpEts9P/wNPPZAY5CKSJPVDTpkh/oWXlEvFONbXoB1F1H46RgIwt3fnJpQjK4JfnY6Vo3eQoGBC5n277e5i09PvxzCeI3SOKJFVzXvgWhOFRsonkutGsnWGvaoDWy44PaVUn/IflSUqVHgHqS90bCrujvPpOpO2SX+brj2uYUSAgvqf4XWclmSjOMA7gu9XkMlXuECzDNljoI9iIYy0otwdKLxQdkFn0iWBuNM4cY5c5ScEcfVaAvC4DC4QFMNB3wOrFFr4PJ/EY3DCtsmtv6pYTdXB2mg3gmn6Yszprde3CmmPpY90RwtcEF7cFElZ630c0eyEYJ0aWX9nlvVL+4Y5+Q0WgCdb3T6CWyVLpB9plWZGUrr/dDVRJM8z8Jw2hWOk0mURWk07QjG4SQMw4vc/9L0H7rOuB1ZnLnsOM8vs76PSUtNVNN8cpFGl0kcexZTqQNpum+sGwm+D44Cd27JMyVlu3LzMUhVvXPPAYmg0diVO4rqXorXh8fBXlGSF+9gX7vaWeON9V5bNpx99E6QpHGUXGZhHm6iBDM2TqZRAmmcsTBNQ0xZ4EVwyS0H8d3xC9sP3n0KBv6QUHvGJRZuwSP/DpBrmYbDDX+r1UAdl1u1KpyP5H3L0fdvnDFAuFmza//NGLwbwfEUnP4AUEsDBBQAAAgIAAAYIew39x+5bgAAAHkAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNUz1DPSUVBKL0osyCgGChiCOKWZKSB2tJKpmbGRqbmFgaVBkpFpqkWKrqmhkWmimbFFioGZmUGqWYpSLFB9SWVBql9ibipET0BiSUZaZl5KZl66XlBqcmJxiTvIcKXYWgBQSwECLQAUAAAICAAAGCHs4zMOjoYCAADvBAAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAGCHsN/cfuW4AAAB5AAAACQAkAAAAAAAAAAAAAADTAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAIwDAAAAAA==
+    dataString: UEsDBBQAAAgIAAAYIezB5jmtjwIAACwFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGFVFFv2jAQ/isozwUFAoH0cdB1k0o7QadVrfZwxJdg1bGZ40BbxH/fnZPQdJu0vDj+7r7PvrsvOQbpFiykDu0KhKzK4LIXDkYXvSA12pnKLuHlylpjCfcoKrWWb+jThgQcQD3DRuEXlPnWNVktOFey2PjUCaEFvKyV2TE3Cuv9lcjxBnXutsz0oNQrzKXRzSkRYSikM/ZeKmzAYUyoa/YPfwKPLVCVyCSuydkKCdmhvYFXtEsjZCZTcHQQh5+OgWKcXhO+hBF8TPCjqWNd2QxSDChU1q9fF3zI6aL3Tpx2iN/14X/Un4QIWaAu6Q7LhrdogdGCGRtIn3NrKi3uLezRlrCRSrrXj0dwpkWFe9Du2sJu25x5FjW3xq3wVyWtz02NUphy6Wt0TuqcO3DswC3Rt6pkiq9xCeUzZ/aCPaiKM+Jx2Dtx5yFvgk9cloWS/ESTmJOkFKxx2ctAldgNLrHcdmdzDtyjtSD1vyIWuwxXJ9bWK2C3MAddQrFTVNNn8rR3bdRUzPdYtUILdCAVz4GiRs/r0s830pVSXJc1zlukrvqFln7CJuUB8PrGq+9AZmyK4hOPqpyjdt4RDWc0SJJpkiTDpKH2J4PRNB7HUSPRDwdhGI4T/8TxX4KN6xu5aEbZEUnO2pvQfthIDZPBeDoJ48SLlFtz4KLuKkc9wffOceCWpjw3Wtcz746opbXePdM0gsXSrWlJt3davT48dmio2Y23sC+IO6+8td65eSXFR/cEMJuEYxGmUTxLRSyi/nQ8gTie4SgS02mYZYGvQmrpJKhvpK9c23r6j3QcoqHwiitMacQ9/xWwb4WFw7V8K0zHNVJnZp2Sk/RdrXEum6wBinotrvwPp/N1BMdTcPoNUEsDBBQAAAgIAAAYIeytJO3qbgAAAHkAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNUz1DPSUVBKL0osyCgGChiCOKWZKSB2tFKihamBSYpBsrGZRXKKWYqxrrmJaaKZmUWqkXGKublBWppSLFB9SWVBql9ibipET0BiSUZaZl5KZl66XlBqcmJxiTvIcKXYWgBQSwECLQAUAAAICAAAGCHsweY5rY8CAAAsBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAGCHsrSTt6m4AAAB5AAAACQAkAAAAAAAAAAAAAADcAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAJUDAAAAAA==
     file_cachedStartup: {fileID: 0}
     cacheStartup: 0
   showNavGraphs: 1
@@ -2342,27 +2357,6 @@ MonoBehaviour:
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
   showGraphs: 1
---- !u!114 &489762522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489762516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1764de1de43cc4d19af52679d3eaae06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1073741824
-  desiredSimulationFPS: 20
-  workerThreads: 2
-  doubleBuffering: 0
-  hardCollisions: 1
-  symmetryBreakingBias: 0.1
-  movementPlane: 1
-  useNavmeshAsObstacle: 1
-  drawQuadtree: 0
 --- !u!1 &515793848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6216605556176878421, guid: 6594597756a1deb479548c979058c539, type: 3}
@@ -5541,7 +5535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
-  arrivalDistance: 1
+  arrivalDistance: 0.5
   target: {x: 0, y: 0}
   rb: {fileID: 0}
 --- !u!50 &1501361069
@@ -5700,19 +5694,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1501361066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
+  m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1073741824
-  smoothType: 1
-  subdivisions: 2
-  iterations: 2
-  strength: 0.5
-  uniformLength: 1
-  maxSegmentLength: 2
-  bezierTangentLength: 0.4
-  offset: 0.2
-  factor: 0.1
+  quality: 0
+  splitAtEveryPortal: 0
+  accountForGridPenalties: 0
 --- !u!1 &1582607313
 GameObject:
   m_ObjectHideFlags: 0
@@ -6609,7 +6597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
-  arrivalDistance: 1
+  arrivalDistance: 0.5
   target: {x: 0, y: 0}
   rb: {fileID: 0}
 --- !u!50 &1786191326
@@ -6768,19 +6756,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1786191323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
+  m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1073741824
-  smoothType: 1
-  subdivisions: 2
-  iterations: 2
-  strength: 0.5
-  uniformLength: 1
-  maxSegmentLength: 2
-  bezierTangentLength: 0.4
-  offset: 0.2
-  factor: 0.1
+  quality: 0
+  splitAtEveryPortal: 0
+  accountForGridPenalties: 0
 --- !u!1001 &1795953385
 PrefabInstance:
   m_ObjectHideFlags: 0
