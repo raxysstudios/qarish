@@ -231,9 +231,8 @@ GameObject:
   - component: {fileID: 102590041}
   - component: {fileID: 102590039}
   - component: {fileID: 102590038}
-  - component: {fileID: 102590037}
   - component: {fileID: 102590043}
-  - component: {fileID: 102590044}
+  - component: {fileID: 102590037}
   - component: {fileID: 102590045}
   m_Layer: 6
   m_Name: Sheep
@@ -365,33 +364,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &102590044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102590036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 560112f876f5746c780eca0d404e7139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1073741824
-  radiusBackingField: 0.5
-  heightBackingField: 2
-  centerBackingField: 1
-  locked: 0
-  lockWhenNotMoving: 0
-  agentTimeHorizon: 2
-  obstacleTimeHorizon: 0.5
-  maxNeighbours: 10
-  layer: 1
-  collidesWith: -1
-  wallAvoidForce: 1
-  wallAvoidFalloff: 1
-  priority: 0.5
-  debug: 0
 --- !u!114 &102590045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,7 +2194,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 489762519}
-  - component: {fileID: 489762522}
   - component: {fileID: 489762523}
   m_Layer: 0
   m_Name: Nav
@@ -2265,27 +2236,6 @@ Transform:
   - {fileID: 1228577052}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &489762522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489762516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1764de1de43cc4d19af52679d3eaae06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1073741824
-  desiredSimulationFPS: 20
-  workerThreads: 2
-  doubleBuffering: 0
-  hardCollisions: 1
-  symmetryBreakingBias: 0.1
-  movementPlane: 1
-  useNavmeshAsObstacle: 1
-  drawQuadtree: 0
 --- !u!114 &489762523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5493,9 +5443,8 @@ GameObject:
   - component: {fileID: 1501361071}
   - component: {fileID: 1501361070}
   - component: {fileID: 1501361069}
-  - component: {fileID: 1501361068}
   - component: {fileID: 1501361073}
-  - component: {fileID: 1501361074}
+  - component: {fileID: 1501361068}
   - component: {fileID: 1501361076}
   m_Layer: 6
   m_Name: Sheep (1)
@@ -5627,33 +5576,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &1501361074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501361066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 560112f876f5746c780eca0d404e7139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1073741824
-  radiusBackingField: 0.5
-  heightBackingField: 2
-  centerBackingField: 1
-  locked: 0
-  lockWhenNotMoving: 0
-  agentTimeHorizon: 2
-  obstacleTimeHorizon: 0.5
-  maxNeighbours: 10
-  layer: 1
-  collidesWith: -1
-  wallAvoidForce: 1
-  wallAvoidFalloff: 1
-  priority: 0.5
-  debug: 0
 --- !u!114 &1501361076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6538,9 +6460,8 @@ GameObject:
   - component: {fileID: 1786191328}
   - component: {fileID: 1786191327}
   - component: {fileID: 1786191326}
-  - component: {fileID: 1786191325}
   - component: {fileID: 1786191330}
-  - component: {fileID: 1786191331}
+  - component: {fileID: 1786191325}
   - component: {fileID: 1786191333}
   m_Layer: 6
   m_Name: Sheep (2)
@@ -6672,33 +6593,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &1786191331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786191323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 560112f876f5746c780eca0d404e7139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1073741824
-  radiusBackingField: 0.5
-  heightBackingField: 2
-  centerBackingField: 1
-  locked: 0
-  lockWhenNotMoving: 0
-  agentTimeHorizon: 2
-  obstacleTimeHorizon: 0.5
-  maxNeighbours: 10
-  layer: 1
-  collidesWith: -1
-  wallAvoidForce: 1
-  wallAvoidFalloff: 1
-  priority: 0.5
-  debug: 0
 --- !u!114 &1786191333
 MonoBehaviour:
   m_ObjectHideFlags: 0
