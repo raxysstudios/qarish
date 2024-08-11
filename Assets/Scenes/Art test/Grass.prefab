@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7028004657479843249}
   - component: {fileID: 8095531528376860014}
+  - component: {fileID: 2538969936019372622}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -87,3 +88,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &2538969936019372622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6608328261023738340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2df3a3e1e4e3cd44b93669b2bac61de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minWidth: 0.5
+  maxWidth: 1.5
+  minHeight: 0.5
+  maxHeight: 1.5
+  color:
+    serializedVersion: 2
+    key0: {r: 0.46666667, g: 0.46666667, b: 0.46666667, a: 1}
+    key1: {r: 0.26666668, g: 0.26666668, b: 0.26666668, a: 1}
+    key2: {r: 0.36477977, g: 0.36477977, b: 0.36477977, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  sprites:
+  - {fileID: -1602651575082509251, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: 935533311, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: -158850238, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: -65425066, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: -557163197, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: 292269235, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: -1982311424, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: -686757892, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: -161984427, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: -836620052, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: 1595423179, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: -290273858, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: -281741686, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: 2106497009, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}
+  - {fileID: -13512802, guid: 6ae46dcc3efc9ab4aafc2d49aebb44c4, type: 3}

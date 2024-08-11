@@ -139,10 +139,10 @@ TextureImporter:
       name: foliage_0
       rect:
         serializedVersion: 2
-        x: 153
-        y: 172
-        width: 76
-        height: 114
+        x: 175
+        y: 768
+        width: 52
+        height: 51
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       name: foliage_1
       rect:
         serializedVersion: 2
-        x: 292
-        y: 184
-        width: 48
-        height: 154
+        x: 323
+        y: 754
+        width: 69
+        height: 54
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8e1ef8f73e87eda50800000000000000
-      internalID: 6547803826736325096
+      spriteID: 44927a8e7d207ea4b89a19fb328f0716
+      internalID: 935533311
       vertices: []
       indices: 
       edges: []
@@ -183,20 +183,20 @@ TextureImporter:
       name: foliage_2
       rect:
         serializedVersion: 2
-        x: 429
-        y: 174
-        width: 56
-        height: 106
+        x: 496
+        y: 761
+        width: 47
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 231592eeafa4e6ca0800000000000000
-      internalID: -6021793210149809870
+      spriteID: 56e8a47d71d54d141bc91aed1898a7f0
+      internalID: -158850238
       vertices: []
       indices: 
       edges: []
@@ -205,20 +205,20 @@ TextureImporter:
       name: foliage_3
       rect:
         serializedVersion: 2
-        x: 537
-        y: 167
-        width: 56
-        height: 97
+        x: 700
+        y: 776
+        width: 15
+        height: 23
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4cfccbe54136a0b90800000000000000
-      internalID: -7274893308923686972
+      spriteID: 6cea494fd508fb94b899edbba586407d
+      internalID: -65425066
       vertices: []
       indices: 
       edges: []
@@ -227,20 +227,20 @@ TextureImporter:
       name: foliage_4
       rect:
         serializedVersion: 2
-        x: 646
-        y: 172
-        width: 56
-        height: 135
+        x: 717
+        y: 770
+        width: 43
+        height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e1389579f98a8ec30800000000000000
-      internalID: 4388943240265040670
+      spriteID: 0f12c17d1a57a4d439d48a565b09a5cb
+      internalID: -557163197
       vertices: []
       indices: 
       edges: []
@@ -249,20 +249,20 @@ TextureImporter:
       name: foliage_5
       rect:
         serializedVersion: 2
-        x: 734
-        y: 181
-        width: 69
-        height: 82
+        x: 762
+        y: 771
+        width: 58
+        height: 34
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b6d2491a6eb7cf400800000000000000
-      internalID: 359298300766334315
+      spriteID: 554b410a5dad5f24280cad1fd8181375
+      internalID: 292269235
       vertices: []
       indices: 
       edges: []
@@ -271,20 +271,20 @@ TextureImporter:
       name: foliage_6
       rect:
         serializedVersion: 2
-        x: 864
-        y: 180
-        width: 49
-        height: 68
+        x: 1028
+        y: 761
+        width: 43
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 376b3939903dedb40800000000000000
-      internalID: 5467039035758458483
+      spriteID: 6f4d3c1b8ba61f848bd33e59e39b2e91
+      internalID: -1982311424
       vertices: []
       indices: 
       edges: []
@@ -293,20 +293,20 @@ TextureImporter:
       name: foliage_7
       rect:
         serializedVersion: 2
-        x: 993
-        y: 169
-        width: 51
-        height: 75
+        x: 1370
+        y: 774
+        width: 192
+        height: 158
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7593c8e8a16983f00800000000000000
-      internalID: 1096791550069586263
+      spriteID: c3f2cee85fc6e034c828d24a9e5f359f
+      internalID: -686757892
       vertices: []
       indices: 
       edges: []
@@ -315,20 +315,20 @@ TextureImporter:
       name: foliage_8
       rect:
         serializedVersion: 2
-        x: 1098
-        y: 182
-        width: 50
-        height: 64
+        x: 1699
+        y: 660
+        width: 189
+        height: 127
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 04db72bf210c76e60800000000000000
-      internalID: 7955538454528900416
+      spriteID: bf9b0751e1b9b174fa16ac11fc6ff482
+      internalID: -161984427
       vertices: []
       indices: 
       edges: []
@@ -337,20 +337,20 @@ TextureImporter:
       name: foliage_9
       rect:
         serializedVersion: 2
-        x: 1283
-        y: 178
-        width: 36
-        height: 141
+        x: 708
+        y: 621
+        width: 105
+        height: 36
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 04ba212346b85b1a0800000000000000
-      internalID: -6794371200365450432
+      spriteID: bbd7f1ad58bf619418c0b165b73951e6
+      internalID: -836620052
       vertices: []
       indices: 
       edges: []
@@ -359,20 +359,20 @@ TextureImporter:
       name: foliage_10
       rect:
         serializedVersion: 2
-        x: 1403
-        y: 179
-        width: 47
-        height: 127
+        x: 899
+        y: 625
+        width: 100
+        height: 43
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: eb36dc7126cc53ea0800000000000000
-      internalID: -5893579815666228290
+      spriteID: 5c6a1683f56a97f40a01f7195649d6b9
+      internalID: 1595423179
       vertices: []
       indices: 
       edges: []
@@ -381,20 +381,20 @@ TextureImporter:
       name: foliage_11
       rect:
         serializedVersion: 2
-        x: 1551
-        y: 169
-        width: 57
-        height: 134
+        x: 174
+        y: 480
+        width: 80
+        height: 47
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 843698133f0571ac0800000000000000
-      internalID: -3884547148145401016
+      spriteID: 7f2388ef5efdc3449b6af49ddd1a356c
+      internalID: -290273858
       vertices: []
       indices: 
       edges: []
@@ -403,20 +403,64 @@ TextureImporter:
       name: foliage_12
       rect:
         serializedVersion: 2
-        x: 1745
-        y: 180
-        width: 92
-        height: 114
+        x: 1138
+        y: 464
+        width: 203
+        height: 155
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d03266eb9f5412570800000000000000
-      internalID: 8440104115612558093
+      spriteID: 811f45c00c49bf34380769385592df3f
+      internalID: -281741686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foliage_13
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 479
+        width: 166
+        height: 141
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43d0c1d155b89c44b1d400061afa793
+      internalID: 2106497009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foliage_14
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 387
+        width: 87
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c4e7855ae82964d8e3b8b0cd23f488
+      internalID: -13512802
       vertices: []
       indices: 
       edges: []
@@ -436,18 +480,20 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       foliage_0: -1602651575082509251
-      foliage_1: 6547803826736325096
-      foliage_10: -5893579815666228290
-      foliage_11: -3884547148145401016
-      foliage_12: 8440104115612558093
-      foliage_2: -6021793210149809870
-      foliage_3: -7274893308923686972
-      foliage_4: 4388943240265040670
-      foliage_5: 359298300766334315
-      foliage_6: 5467039035758458483
-      foliage_7: 1096791550069586263
-      foliage_8: 7955538454528900416
-      foliage_9: -6794371200365450432
+      foliage_1: 935533311
+      foliage_10: 1595423179
+      foliage_11: -290273858
+      foliage_12: -281741686
+      foliage_13: 2106497009
+      foliage_14: -13512802
+      foliage_2: -158850238
+      foliage_3: -65425066
+      foliage_4: -557163197
+      foliage_5: 292269235
+      foliage_6: -1982311424
+      foliage_7: -686757892
+      foliage_8: -161984427
+      foliage_9: -836620052
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -121,7 +121,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 226, y: 108}
-    spritePosition: {x: 495, y: 658}
+    spritePosition: {x: 303, y: 658}
   - name: Leg B L
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -143,7 +143,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 197, y: 108}
-    spritePosition: {x: 473, y: 657}
+    spritePosition: {x: 324, y: 657}
   - name: Leg F R
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -165,7 +165,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 402}
-    spritePosition: {x: 400, y: 656}
+    spritePosition: {x: 399, y: 656}
   - name: Leg F L
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -187,7 +187,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 211, y: 4}
-    spritePosition: {x: 372, y: 654}
+    spritePosition: {x: 422, y: 654}
   - name: Body O
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -209,7 +209,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 351, y: 710}
+    spritePosition: {x: 268, y: 710}
   - name: Body B
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -231,7 +231,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 108}
-    spritePosition: {x: 359, y: 714}
+    spritePosition: {x: 274, y: 714}
   - name: Head O
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -253,7 +253,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 202}
-    spritePosition: {x: 268, y: 733}
+    spritePosition: {x: 442, y: 733}
   - name: Head B
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -275,7 +275,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 312}
-    spritePosition: {x: 286, y: 746}
+    spritePosition: {x: 445, y: 746}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []

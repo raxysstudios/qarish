@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Seeker))]
 [RequireComponent(typeof(Orientation2D))]
+[RequireComponent(typeof(Animator))]
 public class SheepControl : MonoBehaviour
 {
     public float speed;
@@ -17,12 +18,15 @@ public class SheepControl : MonoBehaviour
     public Rigidbody2D rb;
     Seeker seeker;
     Orientation2D orient;
+    Animator anim;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         seeker = GetComponent<Seeker>();
         orient = GetComponent<Orientation2D>();
+        anim = GetComponent<Animator>();
+
         InvokeRepeating(nameof(UpdatePath), 0, .5f);
     }
 
@@ -39,8 +43,10 @@ public class SheepControl : MonoBehaviour
     void FixedUpdate()
     {
         if (path == null || currentWaypoint >= path.vectorPath.Count)
+        {
+            anim.SetFloat("Speed", 0);
             return;
-
+        }
         var waypoint = (Vector2)path.vectorPath[currentWaypoint];
         if ((rb.position - waypoint).sqrMagnitude
             <= arrivalDistance * arrivalDistance)
@@ -50,10 +56,12 @@ public class SheepControl : MonoBehaviour
         }
 
         var dir = (waypoint - rb.position).normalized;
-        var force = speed * Time.fixedDeltaTime * dir;
-        rb.AddForce(force);
+        var move = speed * dir;
+        rb.MovePosition(
+           rb.position + move * Time.fixedDeltaTime
+        );
+        anim.SetFloat("Speed", move.magnitude);
 
-        orient.Sign = force.x >= .1f ? 1 : -1;
-
+        orient.Sign = move.x >= .1f ? 1 : -1;
     }
 }

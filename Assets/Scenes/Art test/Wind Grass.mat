@@ -56,7 +56,7 @@ Material:
     - Vector1_36BC0FD6: 0.5
     - Vector1_3AEF5FB5: 0.5
     - Vector1_52D24AB4: 0.5
-    - Vector1_7AA64B76: 2
+    - Vector1_7AA64B76: 7
     - _EnableExternalAlpha: 0
     m_Colors:
     - RimColor: {r: 0, g: 0, b: 0, a: 1}
