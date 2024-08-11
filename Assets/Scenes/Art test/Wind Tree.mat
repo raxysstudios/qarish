@@ -53,10 +53,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_36BC0FD6: 0.5
+    - Vector1_36BC0FD6: 1
     - Vector1_3AEF5FB5: 1
-    - Vector1_52D24AB4: 0.5
-    - Vector1_7AA64B76: 7
+    - Vector1_52D24AB4: 0.1
+    - Vector1_7AA64B76: 5
     - _EnableExternalAlpha: 0
     m_Colors:
     - RimColor: {r: 0, g: 0, b: 0, a: 1}
