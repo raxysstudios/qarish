@@ -40,6 +40,10 @@ public class SheepControl : MonoBehaviour
         });
     }
 
+    bool DidArrive(Vector2 target) =>
+        (rb.position - target).sqrMagnitude
+        <= arrivalDistance * arrivalDistance;
+
     void FixedUpdate()
     {
         if (path == null || currentWaypoint >= path.vectorPath.Count)
@@ -48,8 +52,7 @@ public class SheepControl : MonoBehaviour
             return;
         }
         var waypoint = (Vector2)path.vectorPath[currentWaypoint];
-        if ((rb.position - waypoint).sqrMagnitude
-            <= arrivalDistance * arrivalDistance)
+        if (DidArrive(waypoint))
         {
             currentWaypoint++;
             return;

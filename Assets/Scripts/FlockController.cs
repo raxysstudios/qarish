@@ -57,11 +57,12 @@ public class FlockController : MonoBehaviour
             sheep[0].target = Target.position;
             for (var i = 1; i < engagedCount; i++)
                 sheep[i].target = sheep[i - 1].rb.position;
+            // sheep[i].target = Target.position;
 
             if (engagedCount < sheep.Count)
                 engagedCount++;
 
-            yield return new WaitForFixedUpdate();
+            yield return new WaitForSeconds(followDelay);
         }
     }
 
