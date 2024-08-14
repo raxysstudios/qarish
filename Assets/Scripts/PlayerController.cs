@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed;
     private Vector2 moveInput;
     private Vector2 worldMouse = Vector2.zero;
+    
 
     private Rigidbody2D rb;
     private Animator anim;
