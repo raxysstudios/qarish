@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public int damage;
+    [SerializeField] private int damage;
     public float cooldown;
     public bool isEnemy = false;
-    public void Hit()
+
+    public void Attak()
     {
         
     }

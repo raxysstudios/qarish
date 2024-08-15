@@ -1306,9 +1306,10 @@ GameObject:
   - component: {fileID: 5288699197325455704}
   - component: {fileID: 150681494373822891}
   - component: {fileID: 631120043885736273}
+  - component: {fileID: 892453240043835445}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1485,6 +1486,21 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!114 &892453240043835445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6687354287812230407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ed08db5f7783945a8df41870d71bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  cooldown: 0
+  isEnemy: 0
 --- !u!1 &7350200568287520204
 GameObject:
   m_ObjectHideFlags: 0

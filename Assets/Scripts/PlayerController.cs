@@ -11,11 +11,13 @@ using System.Linq;
 [RequireComponent(typeof(Orientation2D))]
 public class PlayerController : MonoBehaviour
 {
+    public float attackRange = 0.5f; // Радиус атаки
+    public LayerMask enemyLayer; // Слой с НПС
     [Header("Move")]
     public float walkSpeed;
     private Vector2 moveInput;
     private Vector2 worldMouse = Vector2.zero;
-    
+    [SerializeField] private int damage;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -64,8 +66,19 @@ public class PlayerController : MonoBehaviour
 
     void OnAttack(InputValue inputValue)
     {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, enemyLayer);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            // Найдите компонент Health (или аналогичный) у НПС и нанесите ему урон
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            if (enemyScript != null)
+            {
+                enemyScript.TakeDamage(damage);
+            }
+        }
         anim.SetTrigger("Attack");
     }
+    
 
     void OnCall(InputValue inputValue)
     {
