@@ -154,7 +154,7 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
-  detectionRange: 5
+  detectionRange: 10
   player: {fileID: 0}
   attackRange: 1.5
   hp: 10
@@ -193,7 +193,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 5
+  m_Radius: 1
 --- !u!50 &69682313592656782
 Rigidbody2D:
   serializedVersion: 5

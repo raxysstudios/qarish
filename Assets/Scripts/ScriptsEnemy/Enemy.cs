@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public Transform player;
     public float attackRange = 1.5f;
     private int currentPatrolIndex;
-    [SerializeField] private int hp = 5;
+    [SerializeField] private int hp;
 
     public int EnemyHP
     {
@@ -50,22 +50,22 @@ public class Enemy : MonoBehaviour
         DetectPlayer();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Attack");
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("No Attack");
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.CompareTag("Player"))
+    //     {
+    //         
+    //     }
+    // }
+    //
+    // private void OnTriggerExit2D(Collider2D other)
+    // {
+    //     
+    //     if (other.CompareTag("Player"))
+    //     {
+    //         
+    //     }
+    // }
     
     void Patrol()
     {
@@ -101,5 +101,12 @@ public class Enemy : MonoBehaviour
             // Перемещаемся к игроку
             transform.position = Vector2.MoveTowards(transform.position, player.position, patrolSpeed * Time.deltaTime);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
+        
     }
 }

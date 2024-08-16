@@ -5,12 +5,16 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
+using UnityEngine.Assertions.Must;
+using UnityEngine.Splines;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Orientation2D))]
 public class PlayerController : MonoBehaviour
 {
+    public Vector2 attackOffset;
     public float attackRange = 0.5f; // Радиус атаки
     public LayerMask enemyLayer; // Слой с НПС
     [Header("Move")]
@@ -66,7 +70,8 @@ public class PlayerController : MonoBehaviour
 
     void OnAttack(InputValue inputValue)
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, enemyLayer);
+        Vector2 attackPosition = (Vector2)transform.position + attackOffset;
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPosition, attackRange, enemyLayer);
         foreach (Collider2D enemy in hitEnemies)
         {
             // Найдите компонент Health (или аналогичный) у НПС и нанесите ему урон
@@ -78,7 +83,15 @@ public class PlayerController : MonoBehaviour
         }
         anim.SetTrigger("Attack");
     }
-    
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Vector2 attackPosition = (Vector2)transform.position + attackOffset;
+        Gizmos.DrawWireSphere(attackPosition, attackRange);
+        
+    }
+
 
     void OnCall(InputValue inputValue)
     {
