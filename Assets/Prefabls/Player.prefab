@@ -1437,7 +1437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
-  sheep: []
+  flock: {fileID: 0}
 --- !u!95 &5288699197325455704
 Animator:
   serializedVersion: 7
