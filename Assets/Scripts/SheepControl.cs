@@ -1,53 +1,70 @@
+using Pathfinding;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
-
+[RequireComponent(typeof(Seeker))]
+[RequireComponent(typeof(Orientation2D))]
+[RequireComponent(typeof(Animator))]
 public class SheepControl : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public float walkSpeed = 5f;
-    private Vector2? moveTarget;
-    private bool isDirection = false;
-    
+    public float speed;
+    int currentWaypoint = 0;
+    public float arrivalDistance = 2;
+
+    public Vector2 target;
+    Path path;
+
+    [HideInInspector]
+    public Rigidbody2D rb;
+    Seeker seeker;
+    Orientation2D orient;
+    Animator anim;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        seeker = GetComponent<Seeker>();
+        orient = GetComponent<Orientation2D>();
+        anim = GetComponent<Animator>();
 
+        InvokeRepeating(nameof(UpdatePath), 0, .5f);
     }
-    
-    private void FixedUpdate()
+
+    void UpdatePath()
     {
-        if (!moveTarget.HasValue)
+        seeker.StartPath(rb.position, target, (p) =>
         {
+            if (p.error) return;
+            path = p;
+            currentWaypoint = 0;
+        });
+    }
+
+    bool DidArrive(Vector2 target) =>
+        (rb.position - target).sqrMagnitude
+        <= arrivalDistance * arrivalDistance;
+
+    void FixedUpdate()
+    {
+        if (path == null || currentWaypoint >= path.vectorPath.Count)
+        {
+            anim.SetFloat("Speed", 0);
             return;
         }
-        if(!isDirection && (moveTarget.Value - rb.position).sqrMagnitude <= 1)
+        var waypoint = (Vector2)path.vectorPath[currentWaypoint];
+        if (DidArrive(waypoint))
         {
-            moveTarget = null;
+            currentWaypoint++;
             return;
         }
-        var direction = isDirection ? moveTarget.Value: (moveTarget.Value - rb.position).normalized;
-        var move = walkSpeed * direction;
+
+        var dir = (waypoint - rb.position).normalized;
+        var move = speed * dir;
         rb.MovePosition(
-            rb.position + move * Time.fixedDeltaTime
+           rb.position + move * Time.fixedDeltaTime
         );
+        anim.SetFloat("Speed", move.magnitude);
 
+        orient.Sign = move.x >= .1f ? 1 : -1;
     }
-
-    public void Stop()
-    {
-        print("Stop");
-    }
-
-    public void Move(Vector2 point)
-    {
-        print("Move " + point);
-    }
-
-    public void Follow(Transform target)
-    {
-        print("Follow " + target);
-    }
-    
 }

@@ -1,9 +1,5 @@
-using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Interactions;
-using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine.Assertions.Must;
@@ -26,9 +22,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private Orientation2D orient;
-    
-    public SheepControl[] sheep;
-    
+
+    public FlockController flock;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -97,28 +93,12 @@ public class PlayerController : MonoBehaviour
     {
         var hits = Physics2D.OverlapCircleAll(worldMouse, 1,
             LayerMask.GetMask("Unit"));
-        if (hits.Length == 0)
-        {
-            foreach (var s in sheep)
-            {
-                s.Move(worldMouse);
-            }
-        }
-        else if(hits.Any((c) => c.CompareTag("Player")))
-        {
-            foreach (var s in sheep)
-            {
-                s.Follow(transform);
-            }
-        }
-        else if (hits.Any((c)=> c.CompareTag("Sheep")))
-        {
-            foreach (var s in sheep)
-            {
-                s.Stop();
-            }
-        }
 
-        
+        if (hits.Length == 0)
+            flock.Move(worldMouse);
+        else if (hits.Any((c) => c.CompareTag("Player")))
+            flock.Follow(transform);
+        else if (hits.Any((c) => c.CompareTag("Sheep")))
+            flock.Stop();
     }
 }
