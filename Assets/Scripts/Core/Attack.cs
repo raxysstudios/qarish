@@ -41,7 +41,7 @@ public class Attack : MonoBehaviour
         foreach (var hit in hits)
             if (hit.TryGetComponent<Health>(out var health))
                 if (team.CanHit(hit.gameObject))
-                    health.Damage(damage);
+                    health.Damage(damage, transform);
 
         ShowEffect();
 
