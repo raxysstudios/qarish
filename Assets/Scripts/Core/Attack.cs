@@ -20,12 +20,13 @@ public class Attack : MonoBehaviour
 
     readonly static List<Collider2D> hits = new();
 
-    public bool IsReady { get; private set; }
+    public bool IsReady { get; private set; } = true;
     public UnityEvent onReady;
 
     void Awake()
     {
         team = GetComponent<Team>();
+        hitBox.enabled = false;
     }
 
     public void Hit()
