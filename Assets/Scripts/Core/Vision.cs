@@ -29,14 +29,15 @@ public class Vision : MonoBehaviour
         }
     }
 
-    public Team GetClosestTarget()
+    public Team GetClosestTarget(out double sqrDist)
     {
-        var min = float.MaxValue;
+        var min = sqrDist = float.MaxValue;
         Team result = null;
+
         foreach (var target in targets)
         {
-            var sqrDist = (target.transform.position
-                           - transform.position).sqrMagnitude;
+            sqrDist = (target.transform.position
+                       - transform.position).sqrMagnitude;
             if (sqrDist < min)
             {
                 result = target;

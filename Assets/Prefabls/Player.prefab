@@ -1473,6 +1473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 1694401791813263572}
+  smoothTime: 0.25
 --- !u!210 &631120043885736273
 SortingGroup:
   m_ObjectHideFlags: 0
