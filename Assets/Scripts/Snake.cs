@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Vision))]
@@ -7,10 +6,12 @@ using UnityEngine;
 [RequireComponent(typeof(Orientation2D))]
 public class Snake : MonoBehaviour
 {
-    public float attackDelay;
-    public float attackSpeed;
+    public float chargeDelay;
     public float attackRadius;
+    public float attackSpeed;
     public float pushRadius;
+
+    public Transform aim;
 
     Vision vision;
     Animator animator;
@@ -30,7 +31,7 @@ public class Snake : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isAttacking && !attack.IsReady) return;
+        if (isAttacking || !attack.IsReady) return;
 
         var closest = vision.GetClosestTarget(out var closestSqrDist);
         if (closest == null)
@@ -42,11 +43,10 @@ public class Snake : MonoBehaviour
         if (closestSqrDist <= pushRadius * pushRadius)
             PushAway(closest);
         else if (closestSqrDist <= attackRadius * attackRadius)
-            StartCoroutine(Attack(closest));
+            StartAttack(closest);
         else if (!vision.targets.Contains(target))
             target = closest;
     }
-
 
     void Update()
     {
@@ -55,20 +55,32 @@ public class Snake : MonoBehaviour
         var point = target == null
             ? transform.position - transform.up
             : target.transform.position;
+
+        animator.SetBool("aim", target != null);
         orient.LookAtSmooth(point);
+    }
+
+    void StartAttack(Team team)
+    {
+        isAttacking = true;
+        aim.position = team.transform.position;
+
+        animator.SetFloat("chargeDelay", 1 / chargeDelay);
+        animator.SetFloat(
+            "attackSpeed",
+            1 / (aim.position - transform.position).magnitude * attackSpeed
+        );
+        animator.SetTrigger("attack");
+    }
+
+    void EndAttack()
+    {
+        attack.Hit();
+        isAttacking = false;
     }
 
     void PushAway(Team team)
     {
         print("snake push");
-    }
-
-    IEnumerator Attack(Team team)
-    {
-        print("snake attack");
-
-        isAttacking = true;
-        yield return new WaitForSeconds(attackDelay);
-        isAttacking = false;
     }
 }
